@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('login', function (){
+Route::any('login', function (){
    return array(
       "x" => "y"
    ) ;
