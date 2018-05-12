@@ -15,8 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('login', function (){
-   return array(
-      "x" => "y"
-   ) ;
-});
+Route::post('login', 'Usuario@ComprobarCredenciales');
