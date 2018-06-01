@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+//    return json_encode(\App\Sys_Modulo::all());
+    return \App\Usuario::find(6)->submodulos()->where("angular_route", "!=", null)->get();
 });
 
 Route::post('login', 'Usuario@ComprobarCredenciales');
+
+Route::prefix("usuario")->group(function(){
+   Route::post("modulos", "Usuario@ObtenerMenus");
+});
